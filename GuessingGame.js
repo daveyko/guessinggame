@@ -151,7 +151,7 @@ $(document).ready(function(){
 	})
 	$('#Hint').on('click', function(){
 		var hint = game.provideHint(); 
-		$('#headers h2').text(hint); 
+		$('#headers h2').text('One of these numbers is right : ' + hint); 
 		$('#Hint').prop('disabled', true); 
 	})
 
