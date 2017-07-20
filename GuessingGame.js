@@ -113,10 +113,11 @@ $(document).ready(function(){
 			$('#headers').find('h1').text('Guess Again!'); 
 		}
 		else if (checkguess === 'You Win!' || checkguess === 'You Lose.'){
-			$('.guess-list').find('li').eq(len).text(game.playersGuess);
 			$('#Go').prop('disabled', true); 
 			$('#Hint').prop('disabled', true); 
 			var statement =  (checkguess === 'You Win!') ? 'You Win!' : 'You Lose.'
+			len = (statement === 'You Win!') ? len + 1  : len; 
+			$('.guess-list').find('li').eq(len).text(game.playersGuess);
 			$('#headers').find('h1').text(statement);
 			$('#headers').find('h2').text('Press reset to play again!') 
 		}
